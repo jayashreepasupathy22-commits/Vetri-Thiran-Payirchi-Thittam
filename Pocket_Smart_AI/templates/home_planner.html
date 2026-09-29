@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home Planner · PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<section class="planner">
+
+    <h1>
+        Home Interior Budget Planner
+    </h1>
+
+
+    <p>
+        Enter your room requirements
+        and let PocketSmart AI create a
+        budget-aware plan.
+    </p>
+
+
+    <form
+        id="plannerForm"
+        class="form-grid"
+    >
+
+        <label>
+            Budget (₹)
+
+            <input
+                name="budget"
+                type="number"
+                min="10000"
+                required
+            >
+        </label>
+
+
+        <label>
+            Room type
+
+            <input
+                name="room_type"
+                value="Living Room"
+                required
+            >
+        </label>
+
+
+        <label>
+            Lights
+
+            <input
+                name="lights"
+                type="number"
+                min="0"
+                value="5"
+            >
+        </label>
+
+
+        <label>
+            Ceiling fans
+
+            <input
+                name="fans"
+                type="number"
+                min="0"
+                value="4"
+            >
+        </label>
+
+
+        <label>
+            Dining tables
+
+            <input
+                name="dining_tables"
+                type="number"
+                min="0"
+                value="2"
+            >
+        </label>
+
+
+        <label>
+            Style
+
+            <select name="style">
+
+                <option>
+                    Modern
+                </option>
+
+                <option>
+                    Minimal
+                </option>
+
+                <option>
+                    Traditional
+                </option>
+
+                <option>
+                    Scandinavian
+                </option>
+
+            </select>
+
+        </label>
+
+
+        <label class="wide">
+
+            Notes
+
+            <textarea
+                name="notes"
+                placeholder="Any special requirements?"
+            ></textarea>
+
+        </label>
+
+
+        <button class="btn wide">
+            Generate Plan
+        </button>
+
+    </form>
+
+
+    <div id="result"></div>
+
+</section>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+
+setupPlanner(
+    "plannerForm",
+    "/api/generate-home",
+    "result"
+);
+
+</script>
+
+{% endblock %}

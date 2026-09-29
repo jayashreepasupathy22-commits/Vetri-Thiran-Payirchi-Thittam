@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}
+Jewelry Planner · PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<section class="planner">
+
+    <h1>
+        Jewelry Budget Planner
+    </h1>
+
+
+    <p>
+        Optionally upload an outfit
+        image for visible color and
+        style matching.
+    </p>
+
+
+    <form
+        id="plannerForm"
+        class="form-grid"
+        enctype="multipart/form-data"
+    >
+
+        <label>
+            Budget (₹)
+
+            <input
+                name="budget"
+                type="number"
+                min="1"
+                required
+            >
+        </label>
+
+
+        <label>
+            Occasion
+
+            <input
+                name="occasion"
+                value="Wedding"
+                required
+            >
+        </label>
+
+
+        <label>
+            Style
+
+            <select name="style">
+
+                <option>
+                    Elegant
+                </option>
+
+                <option>
+                    Minimal
+                </option>
+
+                <option>
+                    Traditional
+                </option>
+
+                <option>
+                    Statement
+                </option>
+
+            </select>
+
+        </label>
+
+
+        <label>
+            Outfit color
+
+            <input
+                name="outfit_color"
+                placeholder="e.g. navy blue"
+            >
+        </label>
+
+
+        <label class="wide">
+
+            Outfit image
+
+            <input
+                name="outfit_image"
+                type="file"
+                accept="image/jpeg,image/png,image/webp"
+            >
+
+        </label>
+
+
+        <label class="wide">
+
+            Notes
+
+            <textarea
+                name="notes"
+            ></textarea>
+
+        </label>
+
+
+        <button class="btn wide">
+            Generate Recommendations
+        </button>
+
+    </form>
+
+
+    <div id="result"></div>
+
+</section>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+
+setupPlanner(
+    "plannerForm",
+    "/api/generate-jewelry",
+    "result",
+    true
+);
+
+</script>
+
+{% endblock %}

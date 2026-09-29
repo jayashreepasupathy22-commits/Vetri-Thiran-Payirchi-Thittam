@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard · PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<section>
+
+    <h1 id="welcome">
+        Dashboard
+    </h1>
+
+
+    <div class="grid three">
+
+        <article class="card">
+
+            <h3>
+                Home
+            </h3>
+
+            <p>
+                Interior budget planning.
+            </p>
+
+            <a href="/home-planner">
+                Plan →
+            </a>
+
+        </article>
+
+
+        <article class="card">
+
+            <h3>
+                Party
+            </h3>
+
+            <p>
+                Event budget allocation.
+            </p>
+
+            <a href="/party-planner">
+                Plan →
+            </a>
+
+        </article>
+
+
+        <article class="card">
+
+            <h3>
+                Jewelry
+            </h3>
+
+            <p>
+                Occasion-aware recommendations.
+            </p>
+
+            <a href="/jewelry-planner">
+                Plan →
+            </a>
+
+        </article>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Your activity
+        </h2>
+
+
+        <p id="count">
+            Loading…
+        </p>
+
+
+        <button
+            class="btn secondary"
+            onclick="logout()"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+
+(async function () {
+
+    const response =
+        await fetch(
+            "/api/session-info"
+        );
+
+
+    const data =
+        await response.json();
+
+
+    if (!data.authenticated) {
+
+        location.href =
+            "/login";
+
+        return;
+    }
+
+
+    document
+        .querySelector("#welcome")
+        .textContent =
+        "Welcome, " +
+        data.user.name;
+
+
+    const sessionResponse =
+        await fetch(
+            "/api/session-data"
+        );
+
+
+    const sessionData =
+        await sessionResponse.json();
+
+
+    document
+        .querySelector("#count")
+        .textContent =
+        "Saved recommendation plans: "
+        + sessionData.recommendation_count;
+
+})();
+
+
+async function logout() {
+
+    await fetch(
+        "/api/logout",
+        {
+            method: "POST"
+        }
+    );
+
+    location.href = "/";
+}
+
+</script>
+
+{% endblock %}

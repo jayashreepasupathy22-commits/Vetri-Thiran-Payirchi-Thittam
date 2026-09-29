@@ -1,0 +1,434 @@
+:root {
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: #1f2937;
+
+    background: #f7f8fc;
+
+    line-height: 1.5;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+}
+
+
+.nav {
+    min-height: 68px;
+
+    background: white;
+
+    border-bottom:
+        1px solid #e5e7eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 6%;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 5;
+}
+
+
+.brand {
+    font-weight: 800;
+
+    color: #4f46e5;
+
+    text-decoration: none;
+
+    font-size: 1.15rem;
+}
+
+
+.nav nav {
+    display: flex;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+}
+
+
+.nav a {
+    color: #374151;
+
+    text-decoration: none;
+}
+
+
+.container {
+    max-width: 1120px;
+
+    margin: 0 auto;
+
+    padding:
+        42px 20px;
+
+    min-height:
+        calc(100vh - 120px);
+}
+
+
+.hero {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 0.8fr;
+
+    gap: 30px;
+
+    align-items: center;
+
+    padding:
+        55px 0;
+}
+
+
+.hero h1 {
+    font-size:
+        clamp(
+            2.2rem,
+            5vw,
+            4.2rem
+        );
+
+    line-height: 1.05;
+
+    margin:
+        10px 0 18px;
+}
+
+
+.hero p {
+    font-size: 1.1rem;
+
+    color: #6b7280;
+}
+
+
+.eyebrow {
+    font-size: 0.8rem !important;
+
+    letter-spacing: 0.14em;
+
+    color: #6366f1 !important;
+
+    font-weight: 700;
+}
+
+
+.hero-card,
+.card,
+.auth-card,
+.planner {
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.03);
+}
+
+
+.hero-card span {
+    font-size: 4rem;
+
+    color: #6366f1;
+
+    font-weight: 800;
+}
+
+
+.grid {
+    display: grid;
+
+    gap: 18px;
+}
+
+
+.three {
+    grid-template-columns:
+        repeat(3, 1fr);
+}
+
+
+.actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 24px;
+
+    flex-wrap: wrap;
+}
+
+
+.btn {
+    display: inline-block;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    padding:
+        12px 18px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+.btn.secondary {
+    background: #eef2ff;
+
+    color: #4338ca;
+}
+
+
+.auth-card {
+    max-width: 480px;
+
+    margin: 30px auto;
+}
+
+
+.auth-card form,
+.planner form {
+    display: grid;
+
+    gap: 16px;
+}
+
+
+.form-grid {
+    grid-template-columns:
+        1fr 1fr;
+}
+
+
+.form-grid .wide {
+    grid-column: 1 / -1;
+}
+
+
+label {
+    font-weight: 600;
+}
+
+
+input,
+select,
+textarea {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 7px;
+
+    padding:
+        11px 12px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 9px;
+
+    font: inherit;
+
+    background: white;
+}
+
+
+textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+
+.planner {
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+.stack {
+    display: grid;
+
+    gap: 14px;
+}
+
+
+.result {
+    margin-top: 24px;
+}
+
+
+.allocation-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(160px, 1fr)
+        );
+
+    gap: 12px;
+}
+
+
+.allocation-item {
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.recommendation-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(240px, 1fr)
+        );
+
+    gap: 14px;
+}
+
+
+.rec {
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 16px;
+}
+
+
+.rec h3 {
+    margin:
+        0 0 5px;
+}
+
+
+.pill {
+    display: inline-block;
+
+    background: #eef2ff;
+
+    color: #4338ca;
+
+    padding:
+        3px 8px;
+
+    border-radius: 999px;
+
+    font-size: 0.78rem;
+}
+
+
+.error {
+    color: #b91c1c;
+}
+
+
+.success {
+    color: #166534;
+}
+
+
+footer {
+    text-align: center;
+
+    color: #6b7280;
+
+    padding: 24px;
+
+    border-top:
+        1px solid #e5e7eb;
+
+    background: white;
+
+    font-size: 0.9rem;
+}
+
+
+@media (max-width: 760px) {
+
+    .hero,
+    .three,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .nav {
+        min-height: auto;
+
+        gap: 12px;
+
+        padding:
+            14px 5%;
+
+        align-items: flex-start;
+    }
+
+
+    .nav nav {
+        gap: 10px;
+
+        font-size: 0.9rem;
+    }
+
+
+    .container {
+        padding:
+            28px 14px;
+    }
+}

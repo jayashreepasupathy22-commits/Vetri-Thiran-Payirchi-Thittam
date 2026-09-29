@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}
+Party Planner · PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<section class="planner">
+
+    <h1>
+        Party Budget Planner
+    </h1>
+
+
+    <p>
+        Allocate your event budget
+        across food, venue, decoration
+        and buffer.
+    </p>
+
+
+    <form
+        id="plannerForm"
+        class="form-grid"
+    >
+
+        <label>
+            Budget (₹)
+
+            <input
+                name="budget"
+                type="number"
+                min="1"
+                required
+            >
+        </label>
+
+
+        <label>
+            Guests
+
+            <input
+                name="guests"
+                type="number"
+                min="1"
+                required
+            >
+        </label>
+
+
+        <label>
+            Event type
+
+            <input
+                name="event_type"
+                value="Birthday"
+                required
+            >
+        </label>
+
+
+        <label>
+            Venue
+
+            <input
+                name="venue"
+                value="Flexible"
+            >
+        </label>
+
+
+        <label>
+            Food preference
+
+            <select
+                name="food_preference"
+            >
+
+                <option>
+                    Mixed
+                </option>
+
+                <option>
+                    Vegetarian
+                </option>
+
+                <option>
+                    Non-vegetarian
+                </option>
+
+            </select>
+
+        </label>
+
+
+        <label class="wide">
+
+            Notes
+
+            <textarea
+                name="notes"
+            ></textarea>
+
+        </label>
+
+
+        <button class="btn wide">
+            Generate Plan
+        </button>
+
+    </form>
+
+
+    <div id="result"></div>
+
+</section>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+
+setupPlanner(
+    "plannerForm",
+    "/api/generate-party",
+    "result"
+);
+
+</script>
+
+{% endblock %}

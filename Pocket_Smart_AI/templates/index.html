@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}
+PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<section class="hero">
+
+    <div>
+
+        <p class="eyebrow">
+            GENAI BUDGET ASSISTANT
+        </p>
+
+
+        <h1>
+            Plan smarter.
+            Spend with purpose.
+        </h1>
+
+
+        <p>
+            Build budget-aware plans for
+            home interiors, parties, and
+            jewelry with Gemini-powered
+            recommendations.
+        </p>
+
+
+        <div class="actions">
+
+            <a
+                class="btn"
+                href="/home-planner"
+            >
+                Start a Home Plan
+            </a>
+
+
+            <a
+                class="btn secondary"
+                href="/register"
+            >
+                Create Account
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <span>₹</span>
+
+        <h3>
+            Budget first
+        </h3>
+
+        <p>
+            Set a spending ceiling and
+            explore options without losing
+            track of your plan.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="grid three">
+
+    <article class="card">
+
+        <h2>
+            Home Interior
+        </h2>
+
+        <p>
+            Rooms, lights, fans, tables,
+            decor and style.
+        </p>
+
+        <a href="/home-planner">
+            Open planner →
+        </a>
+
+    </article>
+
+
+    <article class="card">
+
+        <h2>
+            Party Planner
+        </h2>
+
+        <p>
+            Guest count, food, venue and
+            decoration allocation.
+        </p>
+
+        <a href="/party-planner">
+            Open planner →
+        </a>
+
+    </article>
+
+
+    <article class="card">
+
+        <h2>
+            Jewelry
+        </h2>
+
+        <p>
+            Occasion and style matching
+            with optional outfit image
+            analysis.
+        </p>
+
+        <a href="/jewelry-planner">
+            Open planner →
+        </a>
+
+    </article>
+
+</section>
+
+{% endblock %}
